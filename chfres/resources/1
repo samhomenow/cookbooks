@@ -1,0 +1,61 @@
+-bash: exec: 6: not found
+1
+sam.rb
+eth0      Link encap:Ethernet  HWaddr 08:00:27:20:20:F4  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe20:20f4/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:540 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:344 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:55880 (54.5 KiB)  TX bytes:47220 (46.1 KiB)
+
+eth1      Link encap:Ethernet  HWaddr 08:00:27:2A:5E:DD  
+          inet addr:192.168.33.101  Bcast:192.168.33.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe2a:5edd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:12904 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:927 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:822552 (803.2 KiB)  TX bytes:127381 (124.3 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+ls: cannot access sssss: No such file or directory
+1
+sam.rb
+eth0      Link encap:Ethernet  HWaddr 08:00:27:20:20:F4  
+          inet addr:10.0.2.15  Bcast:10.0.2.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe20:20f4/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:540 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:344 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:55880 (54.5 KiB)  TX bytes:47220 (46.1 KiB)
+
+eth1      Link encap:Ethernet  HWaddr 08:00:27:2A:5E:DD  
+          inet addr:192.168.33.101  Bcast:192.168.33.255  Mask:255.255.255.0
+          inet6 addr: fe80::a00:27ff:fe2a:5edd/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:12904 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:927 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:822552 (803.2 KiB)  TX bytes:127381 (124.3 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+sam.rb
