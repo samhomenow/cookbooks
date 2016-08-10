@@ -1,0 +1,7 @@
+name 'centos'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures centos'
+long_description 'Installs/Configures centos'
+version '0.1.0'

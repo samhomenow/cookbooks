@@ -6,13 +6,8 @@
 #
 # All rights reserved - Do Not Redistribute
 
-#class ::Chef::Recipe
- # include ::Helpers
-#end
+names=data_bag_item(:user,"passwd")
 
-::Chef::Recipe.send(:include, Users)
-
-
-node['user']['list'].each do |a,b|
-	create(a,b)
+node['group']["#{node['user_group']}"].each do |a|
+		puts names["#{a}"]
 end
