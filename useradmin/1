@@ -1,0 +1,20 @@
+#
+# Cookbook Name:: useradmin
+# Recipe:: default
+#
+# Copyright 2016, YOUR_COMPANY_NAME
+#
+# All rights reserved - Do Not Redistribute
+#
+data=Chef::EncryptedDataBagItem.load('user','passwd')
+
+#data.each do |a|
+#	bash "packs" do 
+#		code <<-EOH
+#		echo data['#{a}'] >> /tmp/lossss
+#		EOH
+#		end
+#end
+
+puts data['praveen']
+
