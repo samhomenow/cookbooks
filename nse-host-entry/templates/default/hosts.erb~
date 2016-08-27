@@ -1,3 +1,0 @@
-<% node['hosts'][<%= node['server']['season'] %>][<%= node['server']['season'] %>].each do |ipaddress,hostname| %>
-	<%= ipaddress %>  <%= hostname %>
- 	<% end %>

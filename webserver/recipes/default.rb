@@ -17,6 +17,11 @@ template "/var/www/html/index.html" do
 	notifies :restart,'service[httpd]',:immediately
 end
 
+template "/etc/httpd/conf/httpd.conf" do
+	source "httpd.conf.erb"
+	notifies :restart,'service[httpd]',:immediately
+end
+
 directory "/var/www/html/home" do
 	owner 'apache'
 	group 'apache'
