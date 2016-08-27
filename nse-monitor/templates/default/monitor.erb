@@ -1,0 +1,56 @@
+#! /bin/bash
+### BEGIN INIT INFO
+#  Monitor script to monitor nginx and node
+#
+# Provides:          monitor nginx and node
+# Required-Start:
+# Required-Stop:
+# Default-Start:
+# Default-Stop:
+# Short-Description: Raise network interfaces.
+# Description:       Prepare /run/network directory, ifstate file and raise network interfaces, or take them down.
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PIDFILE=/var/run/service_lock
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+SC=`basename $0`
+
+. /lib/lsb/init-functions
+
+case "$1" in
+  start)
+        [[ -f $PIDFILE ]] && echo -e "$SC ${RED}already ${GREEN}running${NC}"  && exit 1
+        touch $PIDFILE
+        nohup bash /usr/bin/monitor.sh  >> /tmp/monitor 2>&1 &
+        echo -e "service $SC ${GREEN}started${NC}\n"
+    ;;
+  stop)
+        [[ ! -f $PIDFILE ]] && echo -e "Already ${SC} is ${RED}down${NC}" && exit 1
+        rm -rf $PIDFILE
+        sleep 2
+        ps aux | perl -ane 'if(/\/usr\/bin\/monitor.sh/){print $F[1]}' | xargs kill -9
+        echo -e "service $SC ${GREEN}stopped${NC}\n"
+    ;;
+  force-reload|restart)
+     bash $0 stop
+     sleep 2
+     bash $0 start
+    ;;
+  status)
+        if [[ -f $PIDFILE ]]
+        then
+                echo -e "Service $SC ${GREEN}running${NC}\n"
+        else
+                echo -e "Service $SC ${RED}stopped${NC}\n"
+        fi
+    ;;
+  *)
+    echo "Usage: /etc/init.d/atd {start|stop|restart|force-reload|status}"
+    exit 1
+    ;;
+esac
+
+exit 0
+
