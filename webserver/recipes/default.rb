@@ -7,18 +7,30 @@
 # All rights reserved - Do Not Redistribute
 #
 
-node.default['number']="fifth"
-
 package "httpd" do
 	action :install
+	not_if "rpm -qa  | grep -i httpd"
 end
 
 template "/var/www/html/index.html" do
-	source "index.html.erb"
-	notifies :restart, 'service[httpd]', :immediately 
+	source "index.erb"
+	notifies :restart,'service[httpd]',:immediately
+end
+
+directory "/var/www/html/home" do
+	owner 'apache'
+	group 'apache'
+	mode '0755'
 end
 
 
+cookbook_file "/var/www/html/home/index.html" do
+	source "index.html"
+	owner 'apache'
+	group 'apache'
+	mode '0755'
+end
+
 service "httpd" do
-	action :nothing 
+	action :nothing
 end
