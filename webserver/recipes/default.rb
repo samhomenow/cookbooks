@@ -7,6 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
+class ::Chef::Recipe
+  include ::Helpers
+end
+
 package "httpd" do
 	action :install
 	not_if "rpm -qa  | grep -i httpd"
@@ -22,10 +26,10 @@ template "/etc/httpd/conf/httpd.conf" do
 	notifies :restart,'service[httpd]',:immediately
 end
 
-directory "/var/www/html/home" do
-	owner 'apache'
-	group 'apache'
-	mode '0755'
+#directory_creation("/var/www/html/home")
+log "hiiii"
+foldercreate "through definition" do
+#	foldername "/var/www/html/home"
 end
 
 
