@@ -9,9 +9,9 @@
     Timeout 500
  #   ProxyTimeout 1800
     DirectoryIndex /index.php
-    SSLCertificateFile /AZVOLone/certs/star_globalenglish_com.crt
-    SSLCertificateKeyFile /AZVOLone/certs/star_globalenglish_com.key
-    SSLCertificateChainFile /AZVOLone/certs/DigiCertCA.crt
+    SSLCertificateFile  <%= node['server']['sslcert'] %>
+    SSLCertificateKeyFile <%= node['server']['sslkey'] %>
+    SSLCertificateChainFile <%= node['server']['interimcert'] %>
     Header set Access-Control-Allow-Origin "*"
 #Added by GlobalOps For Cipher Strength
 
