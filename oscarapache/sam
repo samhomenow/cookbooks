@@ -1,8 +1,0 @@
-#!/bin/bash
-sam()
-{
-run_in_path=$1
-rel_depth=${run_in_path}/Ruby/test
-echo $rel_depth
-}
-sam $1

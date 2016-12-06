@@ -1,7 +1,15 @@
-name             'madan'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
-license          'All rights reserved'
-description      'Installs/Configures madan'
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.0'
+name 'madan'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures madan'
+long_description 'Installs/Configures madan'
+version '0.1.0'
+
+# If you upload to Supermarket you should set this so your cookbook
+# gets a `View Issues` link
+# issues_url 'https://github.com/<insert_org_here>/madan/issues' if respond_to?(:issues_url)
+
+# If you upload to Supermarket you should set this so your cookbook
+# gets a `View Source` link
+# source_url 'https://github.com/<insert_org_here>/madan' if respond_to?(:source_url)

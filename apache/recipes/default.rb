@@ -18,3 +18,7 @@ end
 service "httpd" do
 	action :restart
 end
+
+node['a'].each do |key,value|
+	puts "#{key} #{value}"
+end
