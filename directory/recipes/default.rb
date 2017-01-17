@@ -14,3 +14,6 @@ folder_list.each do |folder|
 		action :create
 	end
 end
+
+
+log "hi #{node['vari']}"

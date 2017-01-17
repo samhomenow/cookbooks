@@ -1,0 +1,18 @@
+#!/bin/bash
+
+aide -c /etc/aide/aide.conf --check > /var/log/aide.log
+sleep 1
+SGTO='praveen.sam@pearson.com'
+SGTONAME='Some Name'
+SGSUBJECT="Aide Result [`date +%d-%m-%Y`]: From -> `hostname`"
+SGFROM='praveen.sam@pearson.com'
+SGTEXT="`cat /var/log/aide.log`"
+SGUSER='azure_b021567752405731a9fb504e532cf5fc@azure.com'
+SGPASS='Pe@rson@123'
+sleep 1
+curl -d "to=${SGTO}&toname=${SGTONAME}&subject=${SGSUBJECT}&text=${SGTEXT}&from=${SGFROM}&api_user=${SGUSER}&api_key=${SGPASS}" https://api.sendgrid.com/api/mail.send.json
+sleep 1
+aide -c /etc/aide/aide.conf --init
+sleep 1
+sleep 1
+cp -rf /var/lib/aide/aide.db.new /var/lib/aide/aide.db

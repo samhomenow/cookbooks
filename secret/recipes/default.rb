@@ -5,16 +5,10 @@
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
 
-ruby_block "running" do
 
-block do
+object = Chef::EncryptedDataBagItem.load("sri","home")
 
-object = Chef::EncryptedDataBagItem.load("home","praveen1")
+include_recipe "secret::first"
 
-puts object['dbuser']
+puts object['a']
 
-end
-
-action:run
-
-end

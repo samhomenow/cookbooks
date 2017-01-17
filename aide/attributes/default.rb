@@ -1,0 +1,1 @@
+default['folders']=['tmp','root']
