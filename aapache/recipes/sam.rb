@@ -4,9 +4,22 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
+case node['platform']
+
+when /centos/
+
 package "httpd" do
 	action :install
 	not_if "rpm -qa | grep httpd"
+end
+
+when /ubuntu/
+
+package "apache" do
+	action :install
+	not_if "rpm -qa | grep httpd"
+end
+
 end
 
 cookbook_file "/var/www/html/index.html" do
