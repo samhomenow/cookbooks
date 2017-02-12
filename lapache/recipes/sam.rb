@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
-node.default['apache']['port']=8080
+node.default['apache']['port']=8090
 
 case node['platform']
 
