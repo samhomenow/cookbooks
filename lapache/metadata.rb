@@ -4,7 +4,8 @@ maintainer_email 'you@example.com'
 license 'all_rights'
 description 'Installs/Configures lapache'
 long_description 'Installs/Configures lapache'
-version  '0.1.5'
+version  '0.1.6'
+depends 'variables'
 
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
