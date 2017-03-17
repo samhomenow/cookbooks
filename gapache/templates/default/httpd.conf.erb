@@ -1,4 +1,4 @@
-#
+# total number of folders/files in /etc folder <%= @fol_new %>
 # This is the main Apache server configuration file.  It contains the
 # configuration directives that give the server its instructions.
 # See <URL:http://httpd.apache.org/docs/2.2/> for detailed information.
@@ -133,15 +133,12 @@ MaxRequestsPerChild  0
 # prevent Apache from glomming onto all bound IP addresses (0.0.0.0)
 #
 #Listen 12.34.56.78:80
-<% if defined?node['server']['port'] %>
-
-Listen <%= node['server']['port'] %>
-
+<% if node['port'].is_a? Integer %>
+Listen <%= node['port'] %>
 <% else %>
-
 Listen 80
-
 <% end %>
+
 #
 # Dynamic Shared Object (DSO) Support
 #
