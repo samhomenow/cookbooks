@@ -4,16 +4,20 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
-%w[ sam kiran kranthi uttam naresh ].each do |a|
+node['tcs']['cone'].each do |foldername,filenames|
 
-  directory a do
-  	owner 'root'
+
+directory "/tmp/#{foldername}" do
+	owner 'root'
 	group 'root'
- end
+	mode '0755'
 end
 
-if node['platform'] =~ /cent.*/
+file "/tmp/#{foldername}/#{filenames['filename']}" do
+	content "
+	This is #{filenames['filename']} $$$$ #{foldername}
+	"
+end
 
-log 'hiii '
 
 end
