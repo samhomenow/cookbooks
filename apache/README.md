@@ -1,80 +1,64 @@
-# apache Cookbook
+Description
+===========
+various apache server related resource provides (LWRP)
 
-TODO: Enter the cookbook description here.
+* `apache_fastcgi` - configure fastcgi server via apache name based virtual host, now only `external` mode available
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Platfroms
+=========
 
-## Requirements
+* gentoo
+* ubuntu
+   
+Requirements
+============
 
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+* apache2 cookbook - https://github.com/opscode/cookbooks/tree/master/apache2
 
-e.g.
-### Platforms
+Resource Attributes
+===================
 
-- SandwichOS
+* obligatory 
+    * `socket` - a socket to which fast cgi external server is binded
+    * `server_name` - name of virtual host 
+* optional
+    * `server_alias` - Array, a list of server aliases, default value is  `[]`
+    * `timeout` - Integer, a time to wait for fast cgi server response, in seconds, default value `180`
+    * `access_log` - a path to apache access log file
+    * `error_log` - a path to apache error log file
+    * `start_service` - true|false, whether to try to restart apache when configuring is done, default value `true`    
+* optional for ssl mode
+    * `ssl` - true|false, make virtual host ssl enabled, default value false
+    * `ssl_cipher_suite`
+    * `ssl_certificate_file`
+    * `ssl_certificate_key_file`
 
-### Chef
+ 
+Usage
+=====
 
-- Chef 12.0 or later
+    apache_fastcgi 'myserver' do 
+     action 'install'
+     socket '/var/run/fast-cgi-server/socket'
+     server_name 'host.myserver.com'
+    end
 
-### Cookbooks
 
-- `toaster` - apache needs toaster to brown your bagel.
+Links
+=====
 
-## Attributes
+ * http://httpd.apache.org/docs/1.3/vhosts/
+ * http://www.fastcgi.com/drupal/node/25
 
-TODO: List your cookbook attributes here.
+ToDo
+====
 
-e.g.
-### apache::default
-
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['apache']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
-
-## Usage
-
-### apache::default
-
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include `apache` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[apache]"
-  ]
-}
-```
-
-## Contributing
-
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
-## License and Authors
-
-Authors: TODO: List authors
-
+ * test ssl mode for ubuntu
+ * add more platforms support 
+ * add more tests
+ * add wiki and howtos
+ 
+ 
+ 
+ 
+ 
