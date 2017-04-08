@@ -4,8 +4,8 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-node['node227'].each do |folder,file|
+node.default['values']=" I am from recipe"
 
-	puts folder
-	puts file[:file]
-end
+log "volume from #{node['values']}"
+
+include_recipe "mufilefol::sam"
