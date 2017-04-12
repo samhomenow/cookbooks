@@ -1,9 +1,6 @@
 #
-# Cookbook:: file2
+# Cookbook:: build_cookbook
 # Recipe:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
-
-
-log " I am from #{node['other']} cookbook"
-
+include_recipe 'delivery-truck::default'
