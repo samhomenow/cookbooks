@@ -4,6 +4,8 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
+node.default['port']=8090
+
 package "httpd" do
 	action :install
 	not_if "rpm -qa | grep -i httpd" 

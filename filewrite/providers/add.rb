@@ -1,3 +1,4 @@
+
 action :write do
 	
 	f=open("/tmp/#{new_resource.filename}","w")
@@ -7,12 +8,9 @@ action :write do
 end
 
 
-action :delete do
-	File.delete("/tmp/#{new_resource.filename}")
-end
-
-
 action :remove do
-	puts " I am removing the filleeeeeees"
+	File.delete('/tmp/#{new_resource.filename}')
 end
+
+
 
