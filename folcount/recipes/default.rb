@@ -19,8 +19,8 @@ unless File.exist?("/var/run/cook")
 	end
  
 
- execute "touch /var/run/cook" do
- 	end
+ s=open("/var/run/cook","w")
+ s.puts("hi ")
 
 end
 

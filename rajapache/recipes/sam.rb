@@ -6,4 +6,4 @@
 
 node.default['port']=9090
 
-include_recipe 'rajapache1::default'
+include_recipe 'rajapache::default'
