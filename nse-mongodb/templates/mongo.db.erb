@@ -1,0 +1,22 @@
+# where to write data.
+storage:
+ dbPath: /DATA/mongodb
+ journal:
+     enabled: true
+ engine: wiredTiger
+
+# where to write logging data.
+systemLog:
+    destination: file
+    logAppend: true
+    path: /LOGS/mongodb/mongod.log
+
+# network interfaces
+net:
+<% if node['hostname'] =~ /1$/ %>
+port 48076
+<% elsif node['hostname'] =~ /2$/ %>
+port 48077
+<% else %>
+port 48078
+<% end %>

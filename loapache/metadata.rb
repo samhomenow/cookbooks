@@ -5,6 +5,7 @@ license 'all_rights'
 description 'Installs/Configures loapache'
 long_description 'Installs/Configures loapache'
 version '0.1.3'
+depends 'ovar'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
