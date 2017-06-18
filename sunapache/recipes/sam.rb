@@ -4,7 +4,7 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-node.default['port']=9090
+node.default['port']=8000
 
 case node['platform']
 
@@ -32,6 +32,8 @@ template "/etc/httpd/conf/httpd.conf" do
 	source "httpd.conf.erb"
 	notifies :restart,"service[#{pack}]",:delayed
 end
+
+include_recipe 'sunapache::other'
 
 service "#{pack}" do
 	action :nothing
