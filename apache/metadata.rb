@@ -1,11 +1,20 @@
-maintainer       "YOUR_COMPANY_NAME"
-maintainer_email "YOUR_EMAIL"
-license          "All rights reserved"
-description      "various apache server related resource provides (LWRP)"
-long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          "0.0.5"
-depends 	 "apache2"
+name 'apache'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures apache'
+long_description 'Installs/Configures apache'
+version  '0.2.1'
+depends 'multidvar'
 
-%w{ gentoo ubuntu }.each do |os|
-  supports os
-end
+# The `issues_url` points to the location where issues for this cookbook are
+# tracked.  A `View Issues` link will be displayed on this cookbook's page when
+# uploaded to a Supermarket.
+#
+# issues_url 'https://github.com/<insert_org_here>/apache/issues' if respond_to?(:issues_url)
+
+# The `source_url` points to the development reposiory for this cookbook.  A
+# `View Source` link will be displayed on this cookbook's page when uploaded to
+# a Supermarket.
+#
+# source_url 'https://github.com/<insert_org_here>/apache' if respond_to?(:source_url)
