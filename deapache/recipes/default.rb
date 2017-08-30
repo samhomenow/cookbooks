@@ -25,13 +25,6 @@ package pack do
 	not_if "rpm -qa | grep -i #{pack}"
 end
 
-template "/var/www/html/index.html" do
-	source "index.html.erb"
-	variables({
-	:name => name,
-	:time => time
-	})
-end
 
 template "/etc/httpd/conf/httpd.conf" do
 	source "httpd.conf.erb"
@@ -41,4 +34,13 @@ end
 service pack do
 	action :start
 end
+
+
+deapache_files "creating a file" do
+	filename "/var/www/html/index.html"
+	content "this is praveen"
+	action :create
+end
+
+
 
