@@ -26,10 +26,10 @@ package pack do
 end
 
 
-template "/etc/httpd/conf/httpd.conf" do
-	source "httpd.conf.erb"
-	notifies :restart,"service[#{pack}]",:delayed
-end
+#template "/etc/httpd/conf/httpd.conf" do
+#	source "httpd.conf.erb"
+#	notifies :restart,"service[#{pack}]",:delayed
+#end
 
 service pack do
 	action :start

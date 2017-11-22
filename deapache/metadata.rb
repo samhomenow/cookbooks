@@ -5,7 +5,6 @@ license 'all_rights'
 description 'Installs/Configures deapache'
 long_description 'Installs/Configures deapache'
 version  '0.1.1'
-depends "15aug"
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
